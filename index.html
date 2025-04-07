@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA - Standard & Complex Bioluminescence Atlas</title>
+    <meta name="description" content="[STANDARD JS VERSION] Exploring bioluminescence with advanced CSS and fundamental, modern JavaScript (No complex APIs).">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-indicator" class="loading-indicator" aria-live="polite" aria-label="Loading standard visual experience">
+        <div class="spinner">
+            <div class="spinner-layer"></div>
+            <div class="spinner-layer"></div>
+            <div class="spinner-layer"></div>
+        </div>
+        <p>Calibrating light patterns...</p>
+    </div>
+
+    <div id="particle-container" class="particle-container" aria-hidden="true">
+        </div>
+
+    <header role="banner" class="site-header">
+        <h1>LUMINA</h1>
+        <p class="tagline">[STANDARD JS COMPLEX] Interactive Bioluminescence Atlas</p>
+
+        <nav id="filter-nav" aria-label="Organism Filters">
+            <button data-filter="all" class="filter-button active" aria-pressed="true">All</button>
+            <button data-filter="deep-sea" class="filter-button" aria-pressed="false">Deep Sea</button>
+            <button data-filter="terrestrial" class="filter-button" aria-pressed="false">Terrestrial</button>
+            <button data-filter="fungal" class="filter-button" aria-pressed="false">Fungal</button>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section id="atlas-grid" class="atlas-grid" data-active-filter="all" aria-label="Bioluminescent Organisms Grid">
+            </section>
+    </main>
+
+    <div id="modal-container" class="modal-container" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button id="modal-close-btn" class="modal-close-btn" aria-label="Close details">
+                    <span></span><span></span> </button>
+                <h2 id="modal-title">Organism Name</h2>
+                <div class="modal-image-container">
+                    <img id="modal-image" src="" alt="" width="800" height="600">
+                     <svg id="anglerfish-lure-svg" class="interactive-svg" viewBox="0 0 100 100" aria-hidden="true">
+                         <defs> <filter id="lure-glow"> <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/> <feMerge> <feMergeNode in="coloredBlur"/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> </defs>
+                         <path d="M 50 10 C 60 20, 60 40, 50 50 C 40 40, 40 20, 50 10 Z" fill="var(--glow-primary)" filter="url(#lure-glow)"/>
+                    </svg>
+                </div>
+                <p id="modal-description">Full description here...</p>
+                <div id="modal-facts" class="modal-facts"> </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer" role="contentinfo">
+        <p>&copy; <span id="current-year">2025</span> LUMINA Project [Standard JS Edition]. Crafted with fundamental web tech.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
